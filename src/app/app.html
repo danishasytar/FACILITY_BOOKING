@@ -1,1 +1,24 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="mainContent">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Menu
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content id="side-menu21">
+    <ion-list id="menu-list1">
+      <ion-item color="blue" menuClose="" on-click="goToHome()" id="menu-list-item1">
+        Satelite
+      </ion-item>
+      <ion-item color="blue" menuClose="" on-click="goToHome()" id="menu-list-item2">
+        Regional
+      </ion-item>
+      <ion-item color="blue" menuClose="" on-click="goToHome()" id="menu-list-item3">
+        Domestic
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #mainContent [root]="rootPage"></ion-nav>

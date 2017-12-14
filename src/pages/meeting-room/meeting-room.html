@@ -1,0 +1,145 @@
+<ion-header>
+  <ion-navbar>
+
+<ion-buttons left>
+        <button ion-button icon-only on-click="goToHome()" class="my-style-for-modal">
+            <ion-icon name="arrow-back"></ion-icon>
+        </button>
+    </ion-buttons>
+    <ion-title>
+      Meeting Room
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="page4">
+
+  <form id="meetingRoom-form1">
+
+         <div class="popupBox" style="width:310px;height:100px; align-content:center;" >
+              
+      <ion-slides>
+        <ion-slide><img src="assets/imgs/logomas.png" width="20" height="20"/></ion-slide>
+        
+        </ion-slides>
+  </div>
+  
+  <div class="spacer" style="width:300px;height:16px;" id="shower-room-spacer1"></div>
+        <div class="spacer" style="width:300px;height:16px;" id="meetingRoom-spacer1"></div>
+
+    <ion-list>
+    <ion-item id="MeetingRoom-input2">
+      <ion-label>
+        Room Number
+      </ion-label>
+      <ion-select [(ngModel)]="room" name="rooms" placeholder="">
+        <ion-option value="room1">Room 1</ion-option>
+        <ion-option value="room2">Room 2</ion-option>
+      </ion-select>
+
+    </ion-item>
+
+    <ion-item>
+      <div [ngSwitch]="room">
+
+
+    <ion-list *ngSwitchCase="'room1'">
+      <ion-item>
+      <h2>ROOM 1</h2>
+            <img src="assets/imgs/MeetingRoom.jpg" width="310" height="200"/>
+      <h4>Room Size 14m²</h4>
+      <h4>Room Features</h4>
+      <h4>6 chairs</h4>
+      <h4>Air Conditioner</h4>
+      <h4>Flat-screen TV</h4>
+      </ion-item>
+      
+<h4></h4>
+<!-- <h4>Enter the details if you want to book.</h4>
+
+  <ion-item id="passenger_name">
+      <ion-label>
+        Name
+      </ion-label>
+      <ion-input type="text" placeholder=""></ion-input>
+    </ion-item>
+
+<ion-item id="time_start">
+      <ion-label>
+        Time Start
+      </ion-label>
+      <ion-input [(ngModel)]="time_start" name="input"></ion-input>
+    </ion-item>
+
+    <ion-item id="time_end">
+      <ion-label>
+        Time End
+      </ion-label>
+      <ion-input [(ngModel)]="time_end" name="input"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input id="remarks" placeholder="Remarks" clearInput></ion-input>
+    </ion-item>
+ -->
+    </ion-list>
+
+
+    
+    <ion-list *ngSwitchCase="'room2'">
+      <ion-item>
+        <h2>ROOM 2</h2>
+        <img src="assets/imgs/MeetingRoom2.jpg" width="310" height="200"/>
+        
+        <h4>Room Size 14m²</h4>
+        <h4>Room Features</h4>
+        <h4>9 chairs</h4>
+        <h4>LCD Projector</h4>
+        <h4>Air Conditioner</h4>
+      </ion-item>
+
+<h4></h4>
+<!-- <h4>Enter the details if you want to book.</h4>
+
+  <ion-item id="passenger_name">
+      <ion-label>
+        Name
+      </ion-label>
+      <ion-input type="text" placeholder=""></ion-input>
+    </ion-item>
+
+  <ion-item id="time_start">
+      <ion-label>
+        Time Start
+      </ion-label>
+      <ion-input [(ngModel)]="time_start" name="input"></ion-input>
+    </ion-item>
+
+    <ion-item id="time_end">
+      <ion-label>
+        Time End
+      </ion-label>
+      <ion-input [(ngModel)]="time_end" name="input"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-input id="remarks" placeholder="Remarks" clearInput></ion-input>
+    </ion-item> -->
+
+    </ion-list>
+
+</div>
+</ion-item>
+
+</ion-list>
+
+  <ion-list>    
+    <ion-item *ngFor="let meetingroom of meetingroom">
+      <h4>{{meetingroom.room_name}}</h4>
+      <h4>Time start: {{meetingroom.time_start}}</h4>
+      <h4>Time end: {{meetingroom.time_end}}</h4>
+    </ion-item>
+</ion-list>
+  </form>
+</ion-content>

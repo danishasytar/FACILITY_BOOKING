@@ -169,11 +169,12 @@ presentAlert() {
     this.navCtrl.push('PrivateRoomPage');
   }
 
-  bookRoom() {
+  book() {
+    let book_detail = "Private Room booking, by MR ...."
     console.log("hha")
       let message = { 
         app_id: "b1cecf36-34a5-41e1-8727-d2ebfb477838",//app id at one signal
-        contents: {"en": "Numbdfdfder"},
+        contents: {"en": book_detail},
         included_segments: ["All"]
       };
       this.http.post('https://onesignal.com/api/v1/notifications', JSON.stringify(message), {headers: new HttpHeaders({"Content-Type":"application/json; charset=utf-8", 'Authorization': 'Basic ZGVjODMzODgtYjNkNS00M2YyLTk1MDctOGE0YTVhZjY4Mjc3'})})

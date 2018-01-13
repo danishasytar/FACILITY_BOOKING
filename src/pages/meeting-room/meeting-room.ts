@@ -4,7 +4,7 @@ import { AlertController } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { HomePage } from '../home/home';
 
 import 'rxjs/add/operator/map';
@@ -71,6 +71,22 @@ export class MeetingRoomPage {
 
   addEntry(){
     this.navCtrl.push('MeetingRoomPage');
+  }
+
+  book() {
+    let book_detail = "Meeting Room booking, by MR ...."
+    console.log("hha")
+      let message = { 
+        app_id: "b1cecf36-34a5-41e1-8727-d2ebfb477838",//app id at one signal
+        contents: {"en": book_detail},
+        included_segments: ["All"]
+      };
+      this.http.post('https://onesignal.com/api/v1/notifications', JSON.stringify(message), {headers: new HttpHeaders({"Content-Type":"application/json; charset=utf-8", 'Authorization': 'Basic ZGVjODMzODgtYjNkNS00M2YyLTk1MDctOGE0YTVhZjY4Mjc3'})})
+        .subscribe(res => {
+          console.log(res)
+        }, (err) => {
+          console.error(err)  
+        }); 
   }
 
   

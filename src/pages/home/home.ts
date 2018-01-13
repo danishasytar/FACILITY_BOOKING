@@ -48,7 +48,7 @@ export class HomePage {
     }
 
     load(){
-      this.http.get('http://unwilled-children.000webhostapp.com/api/facility')
+      this.http.get('http://unwilled-children.000webhostapp.com/admin/api/facility')
       .subscribe(data=> {
         console.log(data);
         this.facility = data;

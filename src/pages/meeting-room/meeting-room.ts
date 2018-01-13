@@ -54,7 +54,7 @@ export class MeetingRoomPage {
     }
 
   load(){
-      this.http.get('http://unwilled-children.000webhostapp.com/api/meetingroom')
+      this.http.get('http://unwilled-children.000webhostapp.com/admin/api/meetingroom')
       .subscribe(data=> {
         console.log(data);
         this.meetingroom = data;
